@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>International Auxiliary Court</title>
+  <meta
+    name="description"
+    content="Official website of the International Auxiliary Court. Providing legal information, support services, and public access to resources."
+  />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+:root {
+      --bg: #0f172a;
+      --bg-2: #111827;
+      --card: rgba(255, 255, 255, 0.06);
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #2563eb;
+      --accent-2: #1d4ed8;
+      --line: rgba(255, 255, 255, 0.12);
+      --white: #ffffff;
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    }
+body {
+      font-family: Arial, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(37, 99, 235, 0.25), transparent 35%),
+        linear-gradient(180deg, var(--bg), var(--bg-2));
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+a {
+      color: inherit;
+      text-decoration: none;
+    }
+.container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+.topbar {
+      border-bottom: 1px solid var(--line);
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+ .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      gap: 20px;
+    }
+.brand {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.3px;
+    }
+.nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+.nav-links a {
+      color: var(--muted);
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
+.nav-links a:hover {
+      color: var(--white);
+    }
+.hero {
+      padding: 90px 0 60px;
+    }
+.hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: center;
+    }
+ .hero h1 {
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1.08;
+      margin-bottom: 18px;
+      color: var(--white);
+    }
+.hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+.hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+.btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+.btn-primary {
+      background: var(--accent);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+.btn-primary:hover {
+      background: var(--accent-2);
+      transform: translateY(-1px);
+    }
+.btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border-color: var(--line);
+    }
+.btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+.hero-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+.hero-card h3 {
+      color: var(--white);
+      margin-bottom: 14px;
+      font-size: 20px;
+    }
+.hero-card ul {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+.hero-card li {
+      padding: 12px 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      color: var(--muted);
+    }
+ section {
+      padding: 26px 0 56px;
+    }
+.section-title {
+      font-size: 30px;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+.section-text {
+      color: var(--muted);
+      margin-bottom: 28px;
+      max-width: 800px;
+    }
+.grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+.card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+.card h3 {
+      color: var(--white);
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
+.card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+.resources {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+.resource-box {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 20px;
+    }
+.resource-box h4 {
+      color: var(--white);
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+.resource-box p {
+      color: var(--muted);
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+.resource-box a {
+      color: #93c5fd;
+      font-weight: 700;
+    }
+.contact-box {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      display: grid;
+      gap: 10px;
+    }
+.contact-box strong {
+      color: var(--white);
+    }
+footer {
+      border-top: 1px solid var(--line);
+      margin-top: 20px;
+      padding: 24px 0 40px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+@media (max-width: 900px) {
+      .hero-grid,
+      .grid-3,
+      .resources {
+        grid-template-columns: 1fr;
+      }
+.nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <div class="brand">International Auxiliary Court</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#resources">Resources</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>International Auxiliary Court</h1>
+        <p>
+          Official platform providing legal information, support services,
+          public resources, and institutional guidance for domestic and
+          international users.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Contact Us</a>
+          <a class="btn btn-secondary" href="#resources">View Resources</a>
+        </div>
+      </div>
+
+<div class="hero-card">
+        <h3>Core Functions</h3>
+        <ul>
+          <li>Legal information and public guidance</li>
+          <li>Support services for institutional and individual inquiries</li>
+          <li>Access to official documents and procedural resources</li>
+          <li>Coordination and communication assistance</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About the Court</h2>
+        <p class="section-text">
+          The International Auxiliary Court platform is designed to provide
+          structured access to legal support materials, procedural information,
+          and public-facing services. This website can be updated and expanded
+          as needed to include case information, announcements, official
+          guidance, and institutional publications.
+        </p>
+      </div>
+    </section>
+
+<section id="services">
+      <div class="container">
+        <h2 class="section-title">Services</h2>
+        <p class="section-text">
+          The platform may be used to present legal assistance, administrative
+          support, public notices, and informational resources in a clear and
+          professional format.
+        </p>
+
+<div class="grid-3">
+          <div class="card">
+            <h3>Legal Information</h3>
+            <p>
+              Public access to legal guidance, procedural summaries, and general
+              information materials.
+            </p>
+          </div>
+
+<div class="card">
+            <h3>Support Services</h3>
+            <p>
+              Assistance for inquiries, institutional coordination, and public
+              communication support.
+            </p>
+          </div>
+
+<div class="card">
+            <h3>Official Resources</h3>
+            <p>
+              Publication of announcements, documents, notices, and other
+              important reference materials.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section id="resources">
+      <div class="container">
+        <h2 class="section-title">Resources</h2>
+        <p class="section-text">
+          Below are example sections you can later replace with your own
+          documents, announcements, downloadable forms, or official links.
+        </p>
+
+<div class="resources">
+          <div class="resource-box">
+            <h4>Public Guidance</h4>
+            <p>
+              General information for visitors, institutions, and individuals
+              seeking procedural assistance.
+            </p>
+            <a href="#">Read More</a>
+          </div>
+
+<div class="resource-box">
+            <h4>Official Documents</h4>
+            <p>
+              Space for publication of forms, notices, regulations, or internal
+              informational documents.
+            </p>
+            <a href="#">Open Section</a>
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+<section id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-text">
+          Update the contact details below with your real information whenever
+          needed.
+        </p>
+
+<div class="contact-box">
+          <div><strong>Email:</strong> info@example.com</div>
+          <div><strong>Phone:</strong> +000 00 000 00 00</div>
+          <div><strong>Address:</strong> Tashkent, Uzbekistan</div>
+          <div><strong>Working Hours:</strong> Monday – Friday, 09:00 – 18:00</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 International Auxiliary Court. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
